@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>GeoAttend â€” ITM GIDA Campus Attendance Portal</title>
-  <link rel="stylesheet" href="GeoAttend.css">
+  <title>GeoAttend — ITM GIDA Campus Attendance Portal</title>
+  <?!= include('Styles'); ?>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -36,10 +36,10 @@
         You are viewing GeoAttend locally outside Google Apps Script. All server validations (Haversine geofence, 200 m radius, 50 m accuracy, conservative boundary check, duplicate lock, and OTP rules) are simulated locally so you can test every acceptance state right now.
       </p>
       <div class="simulator-controls">
-        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="inside">Simulate GPS: Inside Campus (~42 m, Â±12 m)</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="outside">Simulate GPS: Outside Campus (~480 m, Â±15 m)</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="poor_accuracy">Simulate GPS: Poor Accuracy (~85 m, Â±78 m)</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="boundary">Simulate GPS: Uncertain Boundary (~182 m, Â±30 m)</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="inside">Simulate GPS: Inside Campus (~42 m, ±12 m)</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="outside">Simulate GPS: Outside Campus (~480 m, ±15 m)</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="poor_accuracy">Simulate GPS: Poor Accuracy (~85 m, ±78 m)</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="boundary">Simulate GPS: Uncertain Boundary (~182 m, ±30 m)</button>
         <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="denied">Simulate GPS: Permission Denied</button>
         <button type="button" class="btn btn-secondary btn-sm" data-sim-gps="real">Use Real Browser GPS</button>
       </div>
@@ -307,14 +307,14 @@
         <div class="stats-grid">
           <div class="stat-box">
             <div class="stat-label">Student Name &amp; Roll</div>
-            <div class="stat-value" id="profile-roll-display" style="font-size: 18px;">â€”</div>
-            <div class="stat-meta" id="profile-name-display">â€”</div>
+            <div class="stat-value" id="profile-roll-display" style="font-size: 18px;">—</div>
+            <div class="stat-meta" id="profile-name-display">—</div>
           </div>
 
           <div class="stat-box">
             <div class="stat-label">Course / Sem / Section</div>
-            <div class="stat-value" id="profile-course-display" style="font-size: 18px;">â€”</div>
-            <div class="stat-meta" id="profile-email-display">â€”</div>
+            <div class="stat-value" id="profile-course-display" style="font-size: 18px;">—</div>
+            <div class="stat-meta" id="profile-email-display">—</div>
           </div>
 
           <div class="stat-box">
@@ -345,12 +345,12 @@
           <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
             <div class="stat-box">
               <div class="stat-label">Distance from Centre</div>
-              <div class="stat-value" id="geo-distance-value">â€” m</div>
+              <div class="stat-value" id="geo-distance-value">— m</div>
               <div class="stat-meta" id="geo-radius-limit-meta">Max allowed: 200 m</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">GPS Accuracy (&pm;)</div>
-              <div class="stat-value" id="geo-accuracy-value">â€” m</div>
+              <div class="stat-value" id="geo-accuracy-value">— m</div>
               <div class="stat-meta" id="geo-accuracy-limit-meta">Required: &le; 50 m</div>
             </div>
           </div>
@@ -409,7 +409,7 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <h1 id="admin-dash-heading" class="card-title">ITM GIDA â€” GeoAttend Admin Console</h1>
+            <h1 id="admin-dash-heading" class="card-title">ITM GIDA — GeoAttend Admin Console</h1>
             <p class="card-subtitle">Manage attendance reports, authorized student roster, geofence parameters, and security audit logs.</p>
           </div>
           <button type="button" id="btn-admin-refresh" class="btn btn-secondary btn-sm">Refresh Data</button>
@@ -449,7 +449,7 @@
             <div class="stat-box">
               <div class="stat-label">Attendance Percentage</div>
               <div class="stat-value" id="admin-stat-percentage">0%</div>
-              <div class="stat-meta" id="admin-stat-denominator-note">Denominator: â€”</div>
+              <div class="stat-meta" id="admin-stat-denominator-note">Denominator: —</div>
             </div>
           </div>
 
@@ -684,9 +684,7 @@
     </div>
   </footer>
 
-  <script src="GeoAttend.js"></script>
+  <?!= include('Client'); ?>
 </body>
 </html>
-
-
 
